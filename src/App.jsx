@@ -4,6 +4,7 @@ import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import { getAllData } from "../data/fetch";
 import { useEffect, useState } from "react";
+import { AboutTheDevs } from "./Components/AboutTheDevs";
 
 function App() {
   const [allQuotes, setAllQuotes] = useState([]); //state of Quotes
@@ -23,6 +24,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/aboutthedevs" element={<AboutTheDevs />} />
       </Routes>
       <Footer />
     </>
