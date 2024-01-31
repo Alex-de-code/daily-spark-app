@@ -3,7 +3,7 @@ import PopularQuotes from "./PopularQuotes";
 
 const Landing = () => {
   return (
-    <div className="bg-zinc-300">
+    <div className="bg-zinc-400">
       <DailyQuote />
       <PopularQuotes />
     </div>
