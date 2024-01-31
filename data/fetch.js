@@ -1,8 +1,13 @@
 const URL = import.meta.env.VITE_BASE_API_URL;
 
-// export function getAllQuotes() {
-//   return fetch(`${URL}`).then((response) => {
-//     console.log(response);
-//     response.json();
-//   });
-// }
+export function getAllQuotes() {
+  return fetch(`${URL}quotes`)
+    .then((response) => response.json())
+    .then((data) => data);
+}
+
+export function getAllBackgrounds() {
+  return fetch(`${URL}backgrounds`)
+    .then((response) => response.json())
+    .then((data) => data);
+}
