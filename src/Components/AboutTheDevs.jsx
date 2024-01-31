@@ -12,14 +12,14 @@ export const AboutTheDevs = () => {
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100">
           About the Developers
         </h1>
-        <div className="p-5 flex flex-wrap justify-between bg-zinc-200">
-          <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
+        <div className="p-5 flex flex-wrap justify-between bg-gradient-to-t from-blue-500 via-sky-400 to-cyan-600">
+          <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100">
             <img
               src="src/Assets/140419156.png"
               alt="github avatar"
               className="rounded-full p-20 w-15 h-auto object-center"
             />
-            <div className="m-4 border border-white">
+            <div className="m-4">
               Jaden Glenn is a Software Engineer with a passion for technology
               and a keen interest in cybersecurity.
               <div className="font-semibold m-4 text-center">
@@ -44,13 +44,13 @@ export const AboutTheDevs = () => {
               </Link>
             </div>
           </div>
-          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100">
             <img
               src="src/Assets/144467503.png"
               alt="github avatar"
               className="rounded-full p-20 w-15 h-auto object-center"
             />
-            <div className="m-4 border border-white">
+            <div className="m-4">
               Carlitos Dutan is a Software Engineer passionate about front-end
               development, problem-solving, and collaborating with a team.
               <div className="font-semibold m-4 text-center">
@@ -74,13 +74,13 @@ export const AboutTheDevs = () => {
               </Link>
             </div>
           </div>
-          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100">
             <img
               src="src/Assets/140418415.png"
               alt="github avatar"
               className="rounded-full p-20 w-15 h-auto object-center"
             />
-            <div className="m-4 border border-white">
+            <div className="m-4">
               Alexander Gonzalez is a Software Engineer driven by a relentless
               pursuit of crafting timeless user experiences through creative
               ideation, human-centric design, and continuous learning.
