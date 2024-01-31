@@ -1,10 +1,10 @@
 import DailyQuote from "./DailyQuote";
 import PopularQuotes from "./PopularQuotes";
 
-const Landing = () => {
+const Landing = ({ allQuotes, allBackgrounds }) => {
   return (
     <div className="bg-zinc-400">
-      <DailyQuote />
+      <DailyQuote allQuotes={allQuotes} allBackgrounds={allBackgrounds} />
       <PopularQuotes />
     </div>
   );

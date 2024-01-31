@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "./Components/Landing";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
-import { getAllData } from "../data/fetch";
+import { getAllQuotes, getAllBackgrounds } from "../data/fetch";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -10,19 +10,25 @@ function App() {
   const [allBackgrounds, setAllBackgrounds] = useState([]); //state of Backgrounds
 
   useEffect(() => {
-    setAllQuotes(getAllData("quotes", setAllQuotes, setAllBackgrounds)); // should get quotes data
-    setAllBackgrounds(
-      getAllData("backgrounds", setAllQuotes, setAllBackgrounds)
-    ); // should get backgrounds data
-  }, []);
+    getAllQuotes().then((quotes) => {
+      setAllQuotes(quotes);
+    });
 
-  console.log(allQuotes);
+    getAllBackgrounds().then((backgrounds) => {
+      setAllBackgrounds(backgrounds);
+    });
+  }, []);
 
   return (
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route
+          path="/"
+          element={
+            <Landing allQuotes={allQuotes} allBackgrounds={allBackgrounds} />
+          }
+        />
       </Routes>
       <Footer />
     </>
