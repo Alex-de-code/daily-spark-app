@@ -84,11 +84,11 @@ export const AboutTheDevs = () => {
               Carlitos Dutan is a Software Engineer passionate about front-end
               development, problem-solving, and collaborating with a team.
               <div className="font-semibold m-4 text-center">
-                <br />
                 "I thrive on creating engaging user experiences and am eager to
                 contribute my skills to collaborative projects."
               </div>
             </div>
+            <br />
             <div className="flex flex-row text-lg text-white">
               Stay Connected
               <MdKeyboardDoubleArrowRight className="text-3xl" />
