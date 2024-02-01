@@ -24,13 +24,14 @@ function SavedSparks({ allQuotes }) {
           {quoteCategories.map((category) => (
             <button
               key={category}
-              className="px-24 bg-blue-500 border-yellow-500 rounded-lg py-2 shadow-lg hover:bg-white"
+              className="px-24 bg-blue-500 rounded-lg py-2 shadow-lg hover:bg-white"
             >
               {category}
             </button>
           ))}
         </div>
       </div>
+      <div className="bg-white py-12 px-12"></div>
     </div>
   );
 }
