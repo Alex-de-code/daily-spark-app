@@ -15,8 +15,13 @@ export const AboutTheDevs = () => {
         <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100 shadow-lg">
           About the Developers
         </h1>
-        <div className="p-5 flex flex-wrap justify-between bg-gradient-to-t from-blue-500 via-sky-400 to-cyan-600">
-          <div className="mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white shadow-2xl backdrop-blur-3xl bg-opacity-90 border border-gray-100">
+        <div
+          className="p-5 flex flex-wrap justify-between bg-contain bg-center"
+          style={{
+            backgroundImage: `url("src/assets/cool-ocean-jellyfish-bg.jpeg")`,
+          }}
+        >
+          <div className="mx-12 my-12 p-5 flex-1 flex flex-col items-center rounded-lg bg-white/20 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-blue-300">
             <FaLaptopCode className="rounded-full my-6 p-5 w-40 h-auto object-center bg-yellow-400 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
             <div className="m-4">
               Jaden Glenn is a Software Engineer with a passion for technology
@@ -43,7 +48,7 @@ export const AboutTheDevs = () => {
               </Link>
             </div>
           </div>
-          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white shadow-2xl backdrop-blur-3xl bg-opacity-90 border border-gray-100">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white/20 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-blue-300">
             <BsGearWide className="rounded-full my-6 p-5 w-40 h-auto object-center bg-yellow-400 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
             <div className="m-4">
               Carlitos Dutan is a Software Engineer passionate about front-end
@@ -69,7 +74,7 @@ export const AboutTheDevs = () => {
               </Link>
             </div>
           </div>
-          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white shadow-2xl backdrop-blur-3xl bg-opacity-90 border border-gray-100">
+          <div className=" mx-2 my-2 p-5 flex-1 flex flex-col items-center rounded-lg bg-white/20 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-blue-300">
             <MdOutlineDesignServices className="rounded-full my-6 p-5 w-40 h-auto bg-yellow-400 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
             <div className="m-4">
               Alexander Gonzalez is a Software Engineer driven by a relentless
