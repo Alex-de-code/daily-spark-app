@@ -31,7 +31,7 @@ function SavedSparks({ allQuotes }) {
           ))}
         </div>
       </div>
-      <div className="bg-white py-12 px-12"></div>
+      <div className="bg-white py-12 px-12">{}</div>
     </div>
   );
 }
