@@ -30,7 +30,10 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="src/SavedQuotes" element={<SavedSparks />} />
+        <Route
+          path="src/SavedQuotes"
+          element={<SavedSparks allQuotes={allQuotes} />}
+        />
         <Route path="/CreateQuote" element={<MakeASpark />} />
         <Route path="src/Favorite" element={<FavoriteQuotes />} />
         <Route
