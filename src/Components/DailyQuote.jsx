@@ -7,7 +7,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
 
   useEffect(() => {
     if (allQuotes.length > 0) {
-      setDailyQuote(allQuotes[5]);
+      setDailyQuote(allQuotes[7]);
     }
   }, [allQuotes]);
 
@@ -27,21 +27,30 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
           : "",
       }}
     >
-      <div className="bg-blue-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 p-14">
+      <div className="bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100 p-14">
         <div className="py-6">
-          <h1 className="text-6xl text-center text-orange-200">
-            Quote of the Day!
+          <h1 className="text-6xl text-center text-orange-300 font-extrabold ">
+            Spark of the Day!
           </h1>
         </div>
         <div className="py-6">
-          <h2 className="text-3xl text-center text-orange-200">
+          <h2 className="text-3xl text-center text-orange-300 font-bold italic">
             "{dailyQuote.content}"
           </h2>
         </div>
-        <div className="py-6">
-          <p className=" text-2xl text-center text-orange-200">
-            -{dailyQuote.author}
-          </p>
+        <div className="py-6 grid grid-cols-2 items-center">
+          <div className="flex justify-end items-center">
+            <p className="text-2xl text-orange-300 font-semibold italic px-2">
+              - {dailyQuote.author}
+            </p>
+          </div>
+          <div className="flex justify-start items-center">
+            <img
+              className="px-2 max-h-28 rounded-full"
+              src={dailyQuote.image}
+              alt={dailyQuote.author}
+            />
+          </div>
         </div>
       </div>
     </div>
