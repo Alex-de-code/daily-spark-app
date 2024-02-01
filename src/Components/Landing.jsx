@@ -3,9 +3,9 @@ import PopularQuotes from "./PopularQuotes";
 
 const Landing = ({ allQuotes, allBackgrounds }) => {
   return (
-    <div className="bg-zinc-400">
+    <div className="bg-black">
       <DailyQuote allQuotes={allQuotes} allBackgrounds={allBackgrounds} />
-      <PopularQuotes />
+      <PopularQuotes allQuotes={allQuotes} />
     </div>
   );
 };
