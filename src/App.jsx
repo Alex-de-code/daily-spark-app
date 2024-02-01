@@ -28,6 +28,7 @@ function App() {
 
   return (
     <>
+    <div className="flex- flex-col min-h-screen">
       <Nav />
       <Routes>
         <Route path="src/SavedQuotes" element={<SavedSparks />} />
@@ -41,7 +42,9 @@ function App() {
         />
         <Route path="/aboutthedevs" element={<AboutTheDevs />} />
       </Routes>
+      
       <Footer />
+      </div>
     </>
   );
 }
