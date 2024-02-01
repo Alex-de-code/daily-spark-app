@@ -1,11 +1,6 @@
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PopularQuotes = ({ allQuotes }) => {
-  const navigate = useNavigate();
-
-  useEffect(() => {});
-
   return (
     <div className="h-auto bg-gradient-to-b from-black via-zinc-600 to-black">
       <div className="py-8">
