@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./DailyQuote.css";
 
 const DailyQuote = ({ allQuotes, allBackgrounds }) => {
   const [dailyQuote, setDailyQuote] = useState({});
