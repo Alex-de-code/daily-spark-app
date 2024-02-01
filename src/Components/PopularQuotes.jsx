@@ -35,7 +35,7 @@ const PopularQuotes = ({ allQuotes }) => {
         )}
       </div>
       <div>
-        <Link to={"/src/Favorite"}>
+        <Link to={"/src/SavedQuotes"}>
           <p className="text-orange-300 flex justify-end mx-8 text-xl underline hover:text-white">
             Click here to see more!
           </p>
