@@ -21,7 +21,7 @@ export const AboutTheDevs = () => {
   return (
     <>
       <div className="">
-        <h1 className="p-10 text-3xl text-center font-semibold bg-zinc-100 shadow-lg">
+        <h1 className="p-10 pb-12 text-3xl text-center font-semibold bg-zinc-300 shadow-3xl shadow-purple-400">
           About the Developers
         </h1>
         <div
@@ -52,7 +52,7 @@ export const AboutTheDevs = () => {
             Your browser does not support the video tag.
           </video>
           <div className="mx-12 my-12 p-5 flex-1 flex flex-col items-center rounded-lg bg-green-500/30 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-green-800">
-            <FaLaptopCode className="rounded-full my-6 p-5 w-40 h-auto object-center bg-zinc-300 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
+            <FaLaptopCode className="rounded-full my-6 p-5 w-40 h-auto object-center bg-zinc-300 shadow-lg" />
             <div className="m-4 text-white">
               Jaden Glenn is a Software Engineer with a passion for technology
               and a keen interest in cybersecurity.
@@ -79,7 +79,7 @@ export const AboutTheDevs = () => {
             </div>
           </div>
           <div className="mx-12 my-12 p-5 flex-1 flex flex-col items-center rounded-lg bg-purple-500/30 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-purple-800">
-            <BsGearWide className="rounded-full my-6 p-5 w-40 h-auto object-center bg-zinc-300 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
+            <BsGearWide className="rounded-full my-6 p-5 w-40 h-auto object-center bg-zinc-300 shadow-lg" />
             <div className="m-4 text-white">
               Carlitos Dutan is a Software Engineer passionate about front-end
               development, problem-solving, and collaborating with a team.
@@ -106,7 +106,7 @@ export const AboutTheDevs = () => {
             </div>
           </div>
           <div className="mx-12 my-12 p-5 flex-1 flex flex-col items-center rounded-lg bg-blue-500/30 shadow-2xl backdrop-brightness-150 backdrop-blur-3xl bg-opacity-90 border border-blue-800">
-            <MdOutlineDesignServices className="rounded-full my-6 p-5 w-40 h-auto bg-zinc-300 transition ease-in-out duration-700 delay-700 hover:animate-bounce shadow-lg" />
+            <MdOutlineDesignServices className="rounded-full my-6 p-5 w-40 h-auto bg-zinc-300 shadow-lg" />
             <div className="m-4 text-white">
               Alexander Gonzalez is a Software Engineer driven by a relentless
               pursuit of crafting timeless user experiences through creative

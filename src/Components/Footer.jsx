@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="px-5 py-2">
               <Link
                 to={`/aboutthedevs`}
-                className="text-base leading-6 text-gray-200 hover:text-yellow-300"
+                className="text-base leading-6 text-gray-200 hover:text-blue-400"
               >
                 About
               </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="px-5 py-2">
               <Link
                 to="/"
-                className="text-base leading-6 text-gray-200 hover:text-yellow-300"
+                className="text-base leading-6 text-gray-100 hover:text-green-400"
               >
                 Home
               </Link>
@@ -26,10 +26,10 @@ const Footer = () => {
           </nav>
           <div className="flex justify-center mt-8 space-x-6">
             <Link to="https://github.com/Alex-de-code/daily-spark-app">
-              <BsGithub className="text-gray-200 hover:text-yellow-400 text-2xl" />
+              <BsGithub className="text-gray-200 hover:text-purple-400 text-2xl" />
             </Link>
           </div>
-          <p className="mt-8 text-base leading-6 text-center text-gray-200">
+          <p className="mt-8 text-base leading-6 text-center text-gray-800">
             Copyright © 2024 Herb Matrix Code Rhythm, Inc.
           </p>
         </div>
