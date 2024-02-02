@@ -1,4 +1,5 @@
 import { useState } from "react"
+import SparkSVG from "./SparkSVG"
 
 
 function MakeASpark() {
@@ -79,8 +80,8 @@ function MakeASpark() {
                     <ul>
                         {createdQuotes.map((element, index) => (
                             <li key={index}
-                            className="text-center p-2 m-2 mx-24">
-                                {element.quote} - {element.author}/{element.category}
+                            className="text-center p-2 m-2 mx-24 grid grid-rows-auto">
+                             {element.quote} - {element.author}/{element.category}
                             </li>
                         ))}
                         
