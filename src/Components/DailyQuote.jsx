@@ -27,10 +27,21 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
       }}
     >
       <div className="bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100 p-14">
-        <div className="py-6">
+        <div className="py-6 flex justify-center">
           <h1 className="text-6xl text-center text-orange-300 font-extrabold ">
             Spark of the Day!
           </h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="3em"
+            viewBox="0 0 448 512"
+            className="m-1.5"
+          >
+            <path
+              fill="#FFD43B"
+              d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"
+            />
+          </svg>
         </div>
         <div className="py-6">
           <h2 className="text-3xl text-center text-orange-300 font-bold italic">
