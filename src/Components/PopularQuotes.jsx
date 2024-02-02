@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SparkSVG from "./SparkSVG";
 
 const PopularQuotes = ({ allQuotes }) => {
   return (
@@ -22,6 +23,7 @@ const PopularQuotes = ({ allQuotes }) => {
                     src={quote.image}
                     alt={quote.author}
                   />
+                  <SparkSVG />
                 </div>
                 <div className="px-5 py-5 text-center italic text-2xl font-medium">
                   "{quote.content}"
