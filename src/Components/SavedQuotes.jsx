@@ -26,7 +26,7 @@ function SavedSparks({ allQuotes }) {
               key={category}
               className="px-24 bg-blue-500 rounded-lg py-2 shadow-lg hover:bg-white"
             >
-              {category}
+              {category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
           ))}
         </div>
