@@ -11,7 +11,7 @@ const PopularQuotes = ({ allQuotes }) => {
       <div className="text-orange-300 grid grid-cols-3 py-16 max-w-half mx-8 gap-8">
         {allQuotes.map(
           (quote, index) =>
-            (index === 0 || index === 10 || index === 13) && (
+            (index === 0 || index === 10 || index === 18) && (
               <div
                 className="h-full w-full bg-blue-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 grid grid-rows-auto"
                 key={quote.id}
