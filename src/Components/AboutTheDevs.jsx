@@ -8,33 +8,14 @@ import { FaLaptopCode } from "react-icons/fa6";
 import { BsGearWide } from "react-icons/bs";
 import { MdOutlineDesignServices } from "react-icons/md";
 
-// Note: Importing the CSS file related to the video
-// import "/src/assets/bgVideoDailySpark.mp4";
-
 export const AboutTheDevs = () => {
-  // Constructing the path to the video file
-  //   const videoPath = new URL(
-  //     "./assets/cool-video-zoom-for-Daily-Spark.mp4",
-  //     import.meta.url
-  //   ).pathname;
-
   return (
     <>
       <div className="">
         <h1 className="p-10 pb-12 text-3xl text-center font-semibold bg-zinc-300 shadow-3xl shadow-purple-400">
           About the Developers
         </h1>
-        <div
-          className="p-5 flex flex-wrap justify-between relative"
-          //   style={{
-          //     backgroundImage: `url("src/assets/cool-ocean-jellyfish-bg.jpeg")`,
-          //   }}
-          //   style={{
-          //     background: `url("../src/assets/cool-video-zoom-for-Daily-Spark.mp4")`,
-          //     backgroundSize: "cover",
-          //     backgroundPosition: "center",
-          //   }}
-        >
+        <div className="p-5 flex flex-wrap justify-between relative">
           <video
             autoPlay
             loop
@@ -67,10 +48,13 @@ export const AboutTheDevs = () => {
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
             <div className="flex flex-row gap-10 my-4">
-              <Link to="https://www.linkedin.com/in/jaden-glenn/">
+              <Link
+                to="https://www.linkedin.com/in/jaden-glenn/"
+                target="_blank"
+              >
                 <FaLinkedin className="text-6xl text-blue-500 hover:animate-pulse hover:text-white ease-in" />
               </Link>
-              <Link to="https://github.com/Jadeng62">
+              <Link to="https://github.com/Jadeng62" target="_blank">
                 <BsGithub className="text-6xl hover:animate-pulse hover:text-white ease-in" />
               </Link>
               <Link to="mailto:jadenglenn@pursuit.org">
@@ -94,10 +78,13 @@ export const AboutTheDevs = () => {
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
             <div className="flex flex-row gap-10 my-4">
-              <Link to="https://www.linkedin.com/in/carlitosdutan/">
+              <Link
+                to="https://www.linkedin.com/in/carlitosdutan/"
+                target="_blank"
+              >
                 <FaLinkedin className="text-6xl text-blue-500 hover:animate-pulse hover:text-white ease-in" />
               </Link>
-              <Link to="https://github.com/CRDutan5">
+              <Link to="https://github.com/CRDutan5" target="_blank">
                 <BsGithub className="text-6xl hover:animate-pulse hover:text-white ease-in" />
               </Link>
               <Link to="mailto:carlitosdutan@pursuit.org">
@@ -121,10 +108,13 @@ export const AboutTheDevs = () => {
               <MdKeyboardDoubleArrowRight className="text-3xl" />
             </div>
             <div className="flex flex-row gap-10 my-4">
-              <Link to="https://www.linkedin.com/in/alexander-gonzalez-can-code/">
+              <Link
+                to="https://www.linkedin.com/in/alexander-gonzalez-can-code/"
+                target="_blank"
+              >
                 <FaLinkedin className="text-6xl text-blue-500 hover:animate-pulse hover:text-white ease-in" />
               </Link>
-              <Link to="https://github.com/Alex-de-code">
+              <Link to="https://github.com/Alex-de-code" target="_blank">
                 <BsGithub className="text-6xl hover:animate-pulse hover:text-white ease-in" />
               </Link>
               <Link to="mailto:alexandergonzalez@pursuit.org">
