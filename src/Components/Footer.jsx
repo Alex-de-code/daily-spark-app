@@ -25,7 +25,10 @@ const Footer = () => {
             </div>
           </nav>
           <div className="flex justify-center mt-8 space-x-6">
-            <Link to="https://github.com/Alex-de-code/daily-spark-app">
+            <Link
+              to="https://github.com/Alex-de-code/daily-spark-app"
+              target="_blank"
+            >
               <BsGithub className="text-gray-200 hover:text-purple-400 text-2xl" />
             </Link>
           </div>
