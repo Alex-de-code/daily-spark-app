@@ -42,8 +42,17 @@ function SavedSparks({ allQuotes }) {
           ))}
         </div>
       </div>
+      <div className="grid-rows-1 flex justify-end">
+        <button
+          className=" mr-12 mt-8 px-12 py-2 shadow-lg hover:bg-orange-400 bg-orange-300 rounded-lg"
+          onClick={() => setCards(allQuotes)}
+        >
+          All Sparks
+        </button>
+      </div>
+
       <div
-        className="bg-white py-12 px-12 max-h-full w-full grid grid-cols-3 gap-6 overflow-y-scroll"
+        className="bg-white py-8 px-12 pb-24 max-h-full w-full grid grid-cols-3 gap-6 overflow-y-scroll"
         key={cards.category}
       >
         {cards.map((quote) => (
