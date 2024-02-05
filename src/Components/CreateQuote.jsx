@@ -65,6 +65,29 @@ const navigate = useNavigate()
        .catch((error) => {
         console.error('Error:', error)
        })
+
+       
+    }
+
+    const handleDelete = (element) => {
+        const options = {
+            method:"DELETE",
+            headers: {
+                'Content-Type' : 'application/json',
+            }
+        }
+    
+        fetch(`${URL}quotes/${element.id}`, options)
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error('Failed to delete')
+            }
+             return res.json()
+        })
+        .then(() => {
+            setCreatedQuotes(createdQuotes.filter((quote) => quote.id !== element))
+        })
+        .catch((error) => console.error('Error', error))
     }
 
 
@@ -75,9 +98,6 @@ const navigate = useNavigate()
 
 
 
-    const handleDelete = () => {
-        
-    }
 
 
 
@@ -126,7 +146,9 @@ const navigate = useNavigate()
                             <li key={index}
                             className="text-center p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid  items-center justify-center gap-2">
                              {element.quote} - {element.author}:{element.category}
-                             <TrashCan onClick={handleDelete}/>
+                             <button onClick={handleDelete} className="hover:text-green-600">
+                                Remove
+                             </button>
                             </li>
                         ))}
                         
@@ -140,4 +162,3 @@ const navigate = useNavigate()
   export default MakeASpark
 
 
-//   Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti reprehenderit, laboriosam nobis neque ipsum fugiat incidunt aspernatur velit corrupti ea nisi, iure asperiores delectus. Nam earum eius nemo accusamus id.
