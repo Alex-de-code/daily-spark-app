@@ -57,7 +57,7 @@ function SavedSparks({ allQuotes }) {
       >
         {cards.map((quote) => (
           <div
-            className=" bg-stone-500 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 h-auto"
+            className=" bg-stone-500 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border-2 border-orange-200 h-auto"
             key={quote.id}
           >
             <div className="flex justify-center py-5">
