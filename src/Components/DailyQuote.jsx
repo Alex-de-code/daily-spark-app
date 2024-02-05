@@ -3,19 +3,42 @@ import { useEffect, useState } from "react";
 const DailyQuote = ({ allQuotes, allBackgrounds }) => {
   const [dailyQuote, setDailyQuote] = useState({});
   const [dailyBackground, setDailyBackground] = useState({});
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     if (allQuotes.length > 0) {
       setDailyQuote(allQuotes[7]);
     }
-  }, [allQuotes]);
 
-  useEffect(() => {
     if (allBackgrounds.length > 0) {
       const randomIndex = Math.floor(Math.random() * allBackgrounds.length);
       setDailyBackground(allBackgrounds[randomIndex]);
+      setDate(displayDate());
     }
-  }, [allBackgrounds]);
+  }, [allQuotes, allBackgrounds]);
+
+  function displayDate() {
+    const months = {
+      1: "January",
+      2: "February",
+      3: "March",
+      4: "April",
+      5: "May",
+      6: "June",
+      7: "July",
+      8: "August",
+      9: "September",
+      10: "October",
+      11: "November",
+      12: "December",
+    };
+    const today = new Date();
+    const year = today.getFullYear();
+    const date = today.getDate();
+    const month = today.getMonth() + 1;
+
+    return `${months[month]} ${date}, ${year}`;
+  }
 
   return (
     <div
@@ -31,6 +54,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
           <h1 className="text-6xl text-center text-orange-300 font-extrabold ">
             Spark of the Day!
           </h1>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="3em"
@@ -43,6 +67,12 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
             />
           </svg>
         </div>
+        <div>
+          <h1 className="text-3xl text-center text-orange-300 font-extrabold ">
+            {date}
+          </h1>
+        </div>
+
         <div className="py-6">
           <h2 className="text-3xl text-center text-orange-300 font-bold italic">
             "{dailyQuote.content}"
