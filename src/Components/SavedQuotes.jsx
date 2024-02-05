@@ -23,18 +23,18 @@ function SavedSparks({ allQuotes }) {
 
   return (
     <div>
-      <div className="py-16 px-12 bg-zinc-400">
-        <h1 className="bg-red-300 pb-6 font-bold text-4xl flex justify-center">
+      <div className="py-8 px-8 bg-stone-300 border-4 border-stone-400">
+        <h1 className="bg-stone-300 pb-6 font-bold text-4xl flex justify-center">
           Categories:
         </h1>
         <div
           className="flex flex-wrap flex-row justify-center gap-x-12
-      gap-y-7 items-center bg-orange-300"
+      gap-y-7 items-center bg-stone-300"
         >
           {quoteCategories.map((category) => (
             <button
               key={category}
-              className="px-24 bg-blue-500 rounded-lg py-2 shadow-lg hover:bg-white"
+              className="px-24 bg-stone-100 rounded-lg py-2 shadow-lg hover:bg-stone-400"
               onClick={() => selectCategory(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
