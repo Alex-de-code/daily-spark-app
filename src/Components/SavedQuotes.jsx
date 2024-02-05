@@ -31,13 +31,14 @@ function SavedSparks({ allQuotes }) {
           className="flex flex-wrap flex-row justify-center gap-x-12
       gap-y-7 items-center bg-stone-300"
         >
-          {quoteCategories.map((category) => (
+          {quoteCategories.map((category, index) => (
             <button
-              key={category}
+              key={index}
               className="px-24 bg-stone-100 rounded-lg py-2 shadow-lg hover:bg-stone-400"
               onClick={() => selectCategory(category)}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {category && category.charAt(0).toUpperCase() + category.slice(1)}
+              {console.log(category)}
             </button>
           ))}
         </div>
@@ -55,10 +56,10 @@ function SavedSparks({ allQuotes }) {
         className="bg-white py-8 px-12 pb-24 max-h-full w-full grid grid-cols-3 gap-6 overflow-y-scroll"
         key={cards.category}
       >
-        {cards.map((quote) => (
+        {cards.map((quote, index) => (
           <div
             className=" bg-stone-500 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border-2 border-orange-200 h-auto"
-            key={quote.id}
+            key={index}
           >
             <div className="flex justify-center py-5">
               <img

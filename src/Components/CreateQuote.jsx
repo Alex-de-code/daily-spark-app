@@ -1,12 +1,26 @@
 import { useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom";
 import SparkSVG from "./SparkSVG"
+import TrashCan from "./TrashCan"
 
+
+const URL = import.meta.env.VITE_BASE_API_URL;
 
 function MakeASpark() {
+
+const navigate = useNavigate()
+
     const [inputedQuote, setInputedQuote] = useState("")
     const [inputedAuthor, setInputedAuthor] = useState("")
     const [createdQuotes, setCreatedQuotes] = useState([])
     const [selectChange, setSelectChange] = useState("")
+    const [userQuote, setUserQuote] = useState({
+        id:"",
+        author:"",
+        content:"",
+        category:"",
+        image: null
+    });
 
 
 
@@ -21,18 +35,48 @@ function MakeASpark() {
     const handleSubmit = (e) => {
        e.preventDefault()
 
-       setCreatedQuotes([
-        ...createdQuotes,
-        {author: inputedAuthor, quote: inputedQuote, category: selectChange}
-       ])
+      const newQuote =
+        {
+         id:"",
+         author: inputedAuthor,
+         content: inputedQuote,
+         category: selectChange,
+         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yZTQ5VqaJcVtWqmZtZ4A_M64XSf35wiwOvo8zmulMXjM45teJIMjRYXTwbEjlcKrnBg&usqp=CAU"
+        }
+
+       setCreatedQuotes([...createdQuotes, newQuote])
+       
        setInputedAuthor("")
        setInputedQuote("")
        setSelectChange("--Please Select--")
 
+
+       const options = {
+        method: "POST",
+        body: JSON.stringify(newQuote),
+        headers: {"Content-Type": "application/json"}
+       }
+
+       fetch(`${URL}/quotes`, options)
+       .then((res) => res.json())
+       .then(data => {
+        console.log("Success:", data)
+       })
+       .catch((error) => {
+        console.error('Error:', error)
+       })
     }
 
+
+
     const handleSelectChange = (event) => {
-        setSelectChange(event.target.value)
+      setSelectChange(event.target.value)
+    }
+
+
+
+    const handleDelete = () => {
+        
     }
 
 
@@ -64,7 +108,7 @@ function MakeASpark() {
                             <select value={selectChange} onChange={handleSelectChange} required className="rounded-full">
                                 <option>--Please Select--</option>
                                 <option value="Forgiveness">Forgiveness</option>
-                                <option value="Growth">Growth</option>
+                                <option value="growth">Growth</option>
                                 <option value="Love">Love</option>
                                 <option value="Motivational">Motivational</option>
                                 <option value="Nature">Nature</option>
@@ -82,6 +126,7 @@ function MakeASpark() {
                             <li key={index}
                             className="text-center p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid  items-center justify-center gap-2">
                              {element.quote} - {element.author}:{element.category}
+                             <TrashCan onClick={handleDelete}/>
                             </li>
                         ))}
                         
