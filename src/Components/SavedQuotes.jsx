@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
 function SavedSparks({ allQuotes }) {
-  //   const [allCategories, setAllCategories] = useState([]); //created a state to store the categories of each card
-  const [quotes, setQuotes] = useState([]); // created a state for quote cards that will render to page based on category
+  const [cards, setCards] = useState([]); // created a state for quote cards that will render to page based on category
 
   const quoteCategories = allQuotes
     .map((quote) => quote.category)
@@ -15,8 +14,12 @@ function SavedSparks({ allQuotes }) {
     const filteredCategoryList = allQuotes.filter(
       (quote) => quote.category === category
     );
-    setQuotes(filteredCategoryList);
+    setCards(filteredCategoryList);
   };
+
+  useEffect(() => {
+    setCards(allQuotes);
+  }, [allQuotes]); // this setsCards of page to render allQuotes on page so users can see the sparks, then it re-renders everytime allQuotes is changed
 
   return (
     <div>
@@ -39,23 +42,35 @@ function SavedSparks({ allQuotes }) {
           ))}
         </div>
       </div>
-      <div className="bg-white py-12 px-12" key={quotes.category}>
-        {quotes.map((quote) => (
+      <div className="grid-rows-1 flex justify-end">
+        <button
+          className=" mr-12 mt-8 px-12 py-2 shadow-lg hover:bg-orange-400 bg-orange-300 rounded-lg"
+          onClick={() => setCards(allQuotes)}
+        >
+          All Sparks
+        </button>
+      </div>
+
+      <div
+        className="bg-white py-8 px-12 pb-24 max-h-full w-full grid grid-cols-3 gap-6 overflow-y-scroll"
+        key={cards.category}
+      >
+        {cards.map((quote) => (
           <div
-            className="h-full w-full bg-blue-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 grid grid-rows-auto"
+            className=" bg-stone-500 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border-2 border-orange-200 h-auto"
             key={quote.id}
           >
             <div className="flex justify-center py-5">
               <img
-                className="px-2 max-h-28 rounded-full"
+                className=" max-h-24 w-auto rounded-full"
                 src={quote.image}
                 alt={quote.author}
               />
             </div>
-            <div className="px-5 py-5 text-center italic text-2xl font-medium">
+            <div className="px-5 py-3 text-center italic text-2xl font-medium">
               "{quote.content}"
             </div>
-            <div className="text-2xl font-medium text-center py-5 ">
+            <div className="text-xl font-medium text-center py-4 ">
               <h1 className="italic"> - {quote.author}</h1>
               <p className="">Category: {quote.category}</p>
             </div>
