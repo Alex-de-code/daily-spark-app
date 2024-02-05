@@ -4,10 +4,15 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
   const [dailyQuote, setDailyQuote] = useState({});
   const [dailyBackground, setDailyBackground] = useState({});
   const [date, setDate] = useState("");
+  const [dateNumber, setDateNumber] = useState(0);
 
   useEffect(() => {
-    if (allQuotes.length > 0) {
-      setDailyQuote(allQuotes[7]);
+    if (allQuotes.length > 0 && dateNumber > 0) {
+      // setDailyQuote(allQuotes[7]);
+      setDailyQuote(allQuotes[dateNumber]);
+      // const splittedDate = date.split(" ");
+      // splittedDate[1].replace(",", "");
+      // setDailyQuote(splittedDate[1]);
     }
 
     if (allBackgrounds.length > 0) {
@@ -15,7 +20,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
       setDailyBackground(allBackgrounds[randomIndex]);
       setDate(displayDate());
     }
-  }, [allQuotes, allBackgrounds]);
+  }, [allQuotes, allBackgrounds, dateNumber]);
 
   function displayDate() {
     const months = {
@@ -36,6 +41,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
     const year = today.getFullYear();
     const date = today.getDate();
     const month = today.getMonth() + 1;
+    setDateNumber(date - 1);
 
     return `${months[month]} ${date}, ${year}`;
   }
