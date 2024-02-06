@@ -37,26 +37,6 @@ const PopularQuotes = ({ allQuotes }) => {
                   <h1 className="italic"> - {quote.author}</h1>
                   <p className="">Category: {quote.category}</p>
                 </div>
-                {/* <div className=" flex justify-between items-center">
-                  <div className="flex"></div>
-                  <div className="flex">
-                    <img
-                      className="px-2 max-h-28 rounded-full"
-                      src={quote.image}
-                      alt={quote.author}
-                    />
-                  </div>
-                  <div className="flex">
-                    <SparkSVG />
-                  </div>
-                </div>
-                <div className="px-5 py-5 text-center italic text-2xl font-medium">
-                  "{quote.content}"
-                </div>
-                <div className="text-2xl font-medium text-center py-5 ">
-                  <h1 className="italic"> - {quote.author}</h1>
-                  <p className="">Category: {quote.category}</p>
-                </div> */}
               </div>
             )
         )}

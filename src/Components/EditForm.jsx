@@ -31,13 +31,10 @@ const EditForm = ({ quote, updateCreatedQuotes }) => {
         return response.json();
       })
       .then((data) => {
-        // Handle success if needed
-        console.log("Quote updated successfully:", data);
         // Call the updateCreatedQuotes function passed as prop
         updateCreatedQuotes(data);
       })
       .catch((error) => {
-        // Handle error if needed
         console.error("Error updating quote:", error);
       });
   };
