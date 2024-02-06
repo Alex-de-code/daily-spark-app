@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TrashCan from "./TrashCan";
 
 const URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -143,9 +144,27 @@ function MakeASpark() {
                   onClick={() => handleDelete(quote.id)}
                   className="hover:text-green-600"
                 >
-                  Remove
+                  <TrashCan />
                 </button>
               </li>
+              //   <li
+              //     key={quote.id}
+              //     className="p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid grid-rows-4"
+              //   >
+              //     <div className="flex justify-center">"{quote.content}"</div>
+              //     <div className="flex justify-center">- {quote.author}</div>
+              //     <div className="flex justify-center">
+              //       Category: {quote.category}
+              //     </div>
+              //     <div className="flex justify-center">
+              //       <button
+              //         onClick={() => handleDelete(quote.id)}
+              //         className="pl-5"
+              //       >
+              //         <TrashCan />
+              //       </button>
+              //     </div>
+              //   </li>
             ))}
           </ul>
         </div>
