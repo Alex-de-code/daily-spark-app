@@ -48,14 +48,14 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
 
   return (
     <div
-      className="flex justify-center items-center h-screen bg-cover bg-no-repeat"
+      className="flex justify-center items-center bg-cover bg-no-repeat xs:py-5 xs:px-5 md:py-20 md:px-10"
       style={{
         backgroundImage: dailyBackground.image
           ? `url(${dailyBackground.image})`
           : "",
       }}
     >
-      <div className="bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100 p-14">
+      <div className="xs:m-8 m:-10 bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100 p-14">
         <div className="py-6 flex justify-center">
           <h1 className="text-6xl text-center text-orange-300 font-extrabold ">
             Spark of the Day!
@@ -74,7 +74,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
           </svg>
         </div>
         <div>
-          <h1 className="text-3xl text-center text-orange-300 font-extrabold ">
+          <h1 className="hidden md:block text-3xl text-center text-orange-300 font-extrabold ">
             {date}
           </h1>
         </div>

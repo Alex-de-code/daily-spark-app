@@ -53,7 +53,7 @@ function SavedSparks({ allQuotes }) {
       </div>
 
       <div
-        className="bg-white py-8 px-12 pb-24 max-h-full w-full grid grid-cols-3 gap-6 overflow-y-scroll"
+        className="bg-white py-8 px-12 pb-24 max-h-full w-full grid grid-cols-1 xs:grid-cols-1 md:grid-cols-3 gap-6 overflow-y-scroll"
         key={cards.category}
       >
         {cards.map((quote, index) => (
@@ -81,5 +81,5 @@ function SavedSparks({ allQuotes }) {
     </div>
   );
 }
-
+//spark
 export default SavedSparks;

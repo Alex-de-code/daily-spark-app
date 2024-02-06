@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import MakeASpark from "./CreateQuote";
 import SparkSVG from "./SparkSVG";
 
-
 const Nav = () => {
   return (
     <>
