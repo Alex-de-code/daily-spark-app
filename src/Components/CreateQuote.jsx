@@ -147,7 +147,7 @@ function MakeASpark() {
             </div>
           </form>
         </div>
-        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full  ml-2 max-h-fit max-w-full text-sm md:text-base lg:text-lg xl">
+        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full ml-2 max-h-fit max-w-full text-sm md:text-base lg:text-lg xl ">
           <h2 className="mb-5 text-center text-yellow-600">Your Sparks :</h2>
           <ul>
             {createdQuotes.map((quote) => (
@@ -155,16 +155,22 @@ function MakeASpark() {
                 key={quote.id}
                 className="text-center p-2 mx-24 my-1 bg-white bg-opacity-100 rounded-lg shadow-sm grid  items-center justify-center gap-2 overflow-hidden"
               >
-                {quote.content} - {quote.author}:{quote.category}
-                <button
-                  onClick={() => handleDelete(quote.id)}
-                  className="hover:text-green-600"
-                >
-                  <TrashCan />
-                </button>
-                <button onClick={() => handleEditToggle(quote.id)}>
-                  <EditPencil />
-                </button>
+                <div>
+                  "{quote.content}" - {quote.author}, Category: {quote.category}
+                  <button
+                    onClick={() => handleDelete(quote.id)}
+                    className="px-2"
+                  >
+                    <TrashCan />
+                  </button>
+                  <button
+                    onClick={() => handleEditToggle(quote.id)}
+                    className="px-2"
+                  >
+                    <EditPencil />
+                  </button>
+                </div>
+
                 {editToggleId === quote.id && (
                   <EditForm
                     quote={quote}
@@ -181,4 +187,3 @@ function MakeASpark() {
 }
 
 export default MakeASpark;
-
