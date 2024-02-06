@@ -83,11 +83,11 @@ const EditForm = ({ quote, updateCreatedQuotes }) => {
             className="rounded-full"
           >
             <option value="">--Please Select--</option>
-            <option value="Forgiveness">Forgiveness</option>
+            <option value="forgiveness">Forgiveness</option>
             <option value="growth">Growth</option>
-            <option value="Love">Love</option>
-            <option value="Motivational">Motivational</option>
-            <option value="Nature">Nature</option>
+            <option value="love">Love</option>
+            <option value="motivational">Motivational</option>
+            <option value="nature">Nature</option>
           </select>
         </div>
         <div>
