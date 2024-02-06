@@ -11,9 +11,9 @@ const Nav = () => {
     <h2 className="text-4xl text-shadow cursor-pointer text-center italic font-mono mb-6 "><Link to="/">Daily Spark </Link></h2>
     </div>
     <ul className="flex justify-between">
-      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 text-lg"><Link to="src/SavedQuotes">Sparks</Link></li>
-      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 mt-2 text-lg"><Link to="CreateQuote">Make a Spark</Link></li>
-      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 text-lg"><Link to="src/Devs">About the Devs.</Link> </li>
+      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 text-2xl"><Link to="src/SavedQuotes">Sparks</Link></li>
+      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 mt-1 text-2xl"><Link to="CreateQuote">Make a Spark</Link></li>
+      <li className="flex-1 text-center hover:text-green-100 text-shadow-sm cursor-pointer drop-shadow-md scale-90 mb-3 text-2xl"><Link to="src/Devs">About the Devs.</Link> </li>
     </ul>
 
   </div>
