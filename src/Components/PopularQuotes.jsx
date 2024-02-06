@@ -9,7 +9,7 @@ const PopularQuotes = ({ allQuotes }) => {
           Popular Sparks
         </h1>
       </div>
-      <div className="text-orange-300 grid grid-cols-3 py-16 max-w-half mx-8 gap-8">
+      <div className="text-orange-300 grid xs:grid-cols-1 m:grid-cols-3 py-16 max-w-half mx-8 gap-8">
         {allQuotes.map(
           (quote, index) =>
             (index === 0 || index === 10 || index === 18) && (
