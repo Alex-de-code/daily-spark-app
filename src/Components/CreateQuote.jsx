@@ -1,6 +1,9 @@
+// MakeASpark.js
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TrashCan from "./TrashCan";
+import EditForm from "./EditForm";
 
 const URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -11,6 +14,7 @@ function MakeASpark() {
   const [inputedAuthor, setInputedAuthor] = useState("");
   const [createdQuotes, setCreatedQuotes] = useState([]);
   const [selectChange, setSelectChange] = useState("");
+  const [editToggleId, setEditToggleId] = useState(null);
 
   useEffect(() => {
     // Load quotes from localStorage on component mount
@@ -75,8 +79,23 @@ function MakeASpark() {
       .catch((error) => console.error("Error", error));
   };
 
+  const handleEditToggle = (id) => {
+    editToggleId === id ? setEditToggleId(null) : setEditToggleId(id);
+  };
+
   const handleSelectChange = (event) => {
     setSelectChange(event.target.value);
+  };
+
+  const updateCreatedQuotes = (updatedQuote) => {
+    setCreatedQuotes((prevQuotes) =>
+      prevQuotes.map((quote) => {
+        if (quote.id === updatedQuote.id) {
+          return updatedQuote; // Replace the updated quote with the new one
+        }
+        return quote;
+      })
+    );
   };
 
   return (
@@ -146,25 +165,14 @@ function MakeASpark() {
                 >
                   <TrashCan />
                 </button>
+                <button onClick={() => handleEditToggle(quote.id)}>Edit</button>
+                {editToggleId === quote.id && (
+                  <EditForm
+                    quote={quote}
+                    updateCreatedQuotes={updateCreatedQuotes}
+                  />
+                )}
               </li>
-              //   <li
-              //     key={quote.id}
-              //     className="p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid grid-rows-4"
-              //   >
-              //     <div className="flex justify-center">"{quote.content}"</div>
-              //     <div className="flex justify-center">- {quote.author}</div>
-              //     <div className="flex justify-center">
-              //       Category: {quote.category}
-              //     </div>
-              //     <div className="flex justify-center">
-              //       <button
-              //         onClick={() => handleDelete(quote.id)}
-              //         className="pl-5"
-              //       >
-              //         <TrashCan />
-              //       </button>
-              //     </div>
-              //   </li>
             ))}
           </ul>
         </div>
