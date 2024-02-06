@@ -16,7 +16,6 @@ function MakeASpark() {
   const [editToggleId, setEditToggleId] = useState(null);
 
   useEffect(() => {
-    // Load quotes from localStorage on component mount
     const savedQuotes = JSON.parse(localStorage.getItem("createdQuotes"));
     if (savedQuotes) {
       setCreatedQuotes(savedQuotes);
@@ -24,7 +23,6 @@ function MakeASpark() {
   }, []);
 
   useEffect(() => {
-    // Save quotes to localStorage whenever createdQuotes changes
     localStorage.setItem("createdQuotes", JSON.stringify(createdQuotes));
   }, [createdQuotes]);
 
@@ -117,7 +115,7 @@ function MakeASpark() {
                 className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 resize-none h-48"
               />
             </div>
-            <div className="flex flex-col space-y-4 ml-4">
+            <div className="flex flex-col space-y-4 ml-4 w-1/2">
               <textarea
                 type="text"
                 required
@@ -134,11 +132,11 @@ function MakeASpark() {
                 className="rounded-full"
               >
                 <option value="">--Please Select--</option>
-                <option value="Forgiveness">Forgiveness</option>
+                <option value="forgiveness">Forgiveness</option>
                 <option value="growth">Growth</option>
-                <option value="Love">Love</option>
-                <option value="Motivational">Motivational</option>
-                <option value="Nature">Nature</option>
+                <option value="love">Love</option>
+                <option value="motivational">Motivational</option>
+                <option value="nature">Nature</option>
               </select>
               <button
                 type="submit"
@@ -149,13 +147,13 @@ function MakeASpark() {
             </div>
           </form>
         </div>
-        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full  ml-2 max-h-fit">
+        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full  ml-2 max-h-fit max-w-full text-sm md:text-base lg:text-lg xl">
           <h2 className="mb-5 text-center text-yellow-600">Your Sparks :</h2>
           <ul>
             {createdQuotes.map((quote) => (
               <li
                 key={quote.id}
-                className="text-center p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid  items-center justify-center gap-2"
+                className="text-center p-2 mx-24 my-1 bg-white bg-opacity-100 rounded-lg shadow-sm grid  items-center justify-center gap-2 overflow-hidden"
               >
                 {quote.content} - {quote.author}:{quote.category}
                 <button
@@ -183,3 +181,4 @@ function MakeASpark() {
 }
 
 export default MakeASpark;
+
