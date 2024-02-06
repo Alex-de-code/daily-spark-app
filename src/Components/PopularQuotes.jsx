@@ -19,7 +19,6 @@ const PopularQuotes = ({ allQuotes }) => {
               >
                 <div className="grid grid-cols-10 p-3">
                   <div className="col-span-4"></div>{" "}
-                  {/* Empty div for first two columns */}
                   <div className="col-span-5">
                     <img
                       className="px-2 max-h-28 rounded-full"
