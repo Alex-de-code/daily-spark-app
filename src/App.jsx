@@ -27,17 +27,18 @@ function App() {
       <Nav />
       <Routes>
         <Route
-          path="/src/SavedQuotes"
+          path="src/SavedQuotes"
           element={<SavedSparks allQuotes={allQuotes} />}
         />
         <Route path="/CreateQuote" element={<MakeASpark />} />
-        <Route path="/AboutTheDevs" element={<AboutTheDevs />} />
+        <Route path="src/Devs" element={<AboutTheDevs />} />
         <Route
           path="/"
           element={
             <Landing allQuotes={allQuotes} allBackgrounds={allBackgrounds} />
           }
         />
+        <Route path="/aboutthedevs" element={<AboutTheDevs />} />
       </Routes>
       <Footer />
     </div>
