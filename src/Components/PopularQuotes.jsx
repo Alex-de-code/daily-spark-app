@@ -9,7 +9,7 @@ const PopularQuotes = ({ allQuotes }) => {
           Popular Sparks
         </h1>
       </div>
-      <div className="text-orange-300 grid xs:grid-cols-1 m:grid-cols-3 pt-4 pb-16 max-w-half mx-8 gap-8">
+      <div className="text-orange-300 grid xs:grid-cols-1 md:grid-cols-3 pt-4 pb-16 max-w-half mx-8 gap-8">
         {allQuotes.map(
           (quote, index) =>
             (index === 0 || index === 10 || index === 18) && (
@@ -22,7 +22,7 @@ const PopularQuotes = ({ allQuotes }) => {
                   {/* Empty div for first two columns */}
                   <div className="col-span-5">
                     <img
-                      className="px-2 max-h-28 rounded-full"
+                      className="px-2 items-center max-h-28 rounded-full"
                       src={quote.image}
                       alt={quote.author}
                     />

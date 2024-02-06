@@ -31,7 +31,6 @@ function App() {
           element={<SavedSparks allQuotes={allQuotes} />}
         />
         <Route path="/CreateQuote" element={<MakeASpark />} />
-        <Route path="src/Devs" element={<AboutTheDevs />} />
         <Route
           path="/"
           element={
