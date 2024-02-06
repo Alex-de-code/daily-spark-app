@@ -17,17 +17,16 @@ const PopularQuotes = ({ allQuotes }) => {
                 className="h-full w-full bg-blue-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 grid grid-rows-auto"
                 key={quote.id}
               >
-                <div className="grid grid-cols-10 p-3">
-                  <div className="col-span-4"></div>{" "}
+                <div className="flex flex-row items-center justify-center p-3">
                   {/* Empty div for first two columns */}
-                  <div className="col-span-5">
+                  <div className="justify-center">
                     <img
-                      className="px-2 items-center max-h-28 rounded-full"
+                      className="px-2 max-h-28 rounded-full"
                       src={quote.image}
                       alt={quote.author}
                     />
                   </div>
-                  <div className="col-span-1">
+                  <div className="justify-end">
                     <SparkSVG />
                   </div>
                 </div>
