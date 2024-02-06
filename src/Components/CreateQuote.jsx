@@ -115,7 +115,7 @@ function MakeASpark() {
                 required
                 className="rounded-full"
               >
-                <option>--Please Select--</option>
+                <option value="">--Please Select--</option>
                 <option value="Forgiveness">Forgiveness</option>
                 <option value="growth">Growth</option>
                 <option value="Love">Love</option>
