@@ -6,6 +6,7 @@ const EditForm = ({ quote, updateCreatedQuotes }) => {
   const URL = import.meta.env.VITE_BASE_API_URL;
 
   const [updatedQuote, setUpdatedQuote] = useState({
+    id: quote.id,
     author: quote.author,
     content: quote.content,
     category: quote.category,

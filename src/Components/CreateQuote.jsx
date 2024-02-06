@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TrashCan from "./TrashCan";
 import EditForm from "./EditForm";
+import EditPencil from "./EditPencil";
 
 const URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -165,7 +166,9 @@ function MakeASpark() {
                 >
                   <TrashCan />
                 </button>
-                <button onClick={() => handleEditToggle(quote.id)}>Edit</button>
+                <button onClick={() => handleEditToggle(quote.id)}>
+                  <EditPencil />
+                </button>
                 {editToggleId === quote.id && (
                   <EditForm
                     quote={quote}
