@@ -5,11 +5,11 @@ const PopularQuotes = ({ allQuotes }) => {
   return (
     <div className="h-auto bg-gradient-to-b from-black via-zinc-600 to-black">
       <div className="py-8">
-        <h1 className="text-6xl text-center text-orange-300 font-extrabold">
+        <h1 className=" py-8 text-6xl text-center text-orange-300 font-extrabold">
           Popular Sparks
         </h1>
       </div>
-      <div className="text-orange-300 grid xs:grid-cols-1 m:grid-cols-3 py-16 max-w-half mx-8 gap-8">
+      <div className="text-orange-300 grid xs:grid-cols-1 m:grid-cols-3 pt-4 pb-16 max-w-half mx-8 gap-8">
         {allQuotes.map(
           (quote, index) =>
             (index === 0 || index === 10 || index === 18) && (
