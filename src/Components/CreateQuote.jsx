@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TrashCan from "./TrashCan";
+import EditForm from "./EditForm";
+import EditPencil from "./EditPencil";
 
 const URL = import.meta.env.VITE_BASE_API_URL;
 
@@ -11,9 +13,9 @@ function MakeASpark() {
   const [inputedAuthor, setInputedAuthor] = useState("");
   const [createdQuotes, setCreatedQuotes] = useState([]);
   const [selectChange, setSelectChange] = useState("");
+  const [editToggleId, setEditToggleId] = useState(null);
 
   useEffect(() => {
-    // Load quotes from localStorage on component mount
     const savedQuotes = JSON.parse(localStorage.getItem("createdQuotes"));
     if (savedQuotes) {
       setCreatedQuotes(savedQuotes);
@@ -21,7 +23,6 @@ function MakeASpark() {
   }, []);
 
   useEffect(() => {
-    // Save quotes to localStorage whenever createdQuotes changes
     localStorage.setItem("createdQuotes", JSON.stringify(createdQuotes));
   }, [createdQuotes]);
 
@@ -75,8 +76,23 @@ function MakeASpark() {
       .catch((error) => console.error("Error", error));
   };
 
+  const handleEditToggle = (id) => {
+    editToggleId === id ? setEditToggleId(null) : setEditToggleId(id);
+  };
+
   const handleSelectChange = (event) => {
     setSelectChange(event.target.value);
+  };
+
+  const updateCreatedQuotes = (updatedQuote) => {
+    setCreatedQuotes((prevQuotes) =>
+      prevQuotes.map((quote) => {
+        if (quote.id === updatedQuote.id) {
+          return updatedQuote; // Replace the updated quote with the new one
+        }
+        return quote;
+      })
+    );
   };
 
   return (
@@ -99,7 +115,7 @@ function MakeASpark() {
                 className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300 resize-none h-48"
               />
             </div>
-            <div className="flex flex-col space-y-4 ml-4">
+            <div className="flex flex-col space-y-4 ml-4 w-1/2">
               <textarea
                 type="text"
                 required
@@ -116,11 +132,11 @@ function MakeASpark() {
                 className="rounded-full"
               >
                 <option value="">--Please Select--</option>
-                <option value="Forgiveness">Forgiveness</option>
+                <option value="forgiveness">Forgiveness</option>
                 <option value="growth">Growth</option>
-                <option value="Love">Love</option>
-                <option value="Motivational">Motivational</option>
-                <option value="Nature">Nature</option>
+                <option value="love">Love</option>
+                <option value="motivational">Motivational</option>
+                <option value="nature">Nature</option>
               </select>
               <button
                 type="submit"
@@ -131,13 +147,13 @@ function MakeASpark() {
             </div>
           </form>
         </div>
-        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full  ml-2 max-h-fit">
+        <div className="mt-6 border border-slate-300 bg: bg-slate-200 rounded-full  ml-2 max-h-fit max-w-full text-sm md:text-base lg:text-lg xl">
           <h2 className="mb-5 text-center text-yellow-600">Your Sparks :</h2>
           <ul>
             {createdQuotes.map((quote) => (
               <li
                 key={quote.id}
-                className="text-center p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid  items-center justify-center gap-2"
+                className="text-center p-2 mx-24 my-1 bg-white bg-opacity-100 rounded-lg shadow-sm grid  items-center justify-center gap-2 overflow-hidden"
               >
                 {quote.content} - {quote.author}:{quote.category}
                 <button
@@ -146,25 +162,16 @@ function MakeASpark() {
                 >
                   <TrashCan />
                 </button>
+                <button onClick={() => handleEditToggle(quote.id)}>
+                  <EditPencil />
+                </button>
+                {editToggleId === quote.id && (
+                  <EditForm
+                    quote={quote}
+                    updateCreatedQuotes={updateCreatedQuotes}
+                  />
+                )}
               </li>
-              //   <li
-              //     key={quote.id}
-              //     className="p-2 mx-24 my-1 bg-white bg-opacity-50 rounded-lg shadow-md grid grid-rows-4"
-              //   >
-              //     <div className="flex justify-center">"{quote.content}"</div>
-              //     <div className="flex justify-center">- {quote.author}</div>
-              //     <div className="flex justify-center">
-              //       Category: {quote.category}
-              //     </div>
-              //     <div className="flex justify-center">
-              //       <button
-              //         onClick={() => handleDelete(quote.id)}
-              //         className="pl-5"
-              //       >
-              //         <TrashCan />
-              //       </button>
-              //     </div>
-              //   </li>
             ))}
           </ul>
         </div>
@@ -174,3 +181,4 @@ function MakeASpark() {
 }
 
 export default MakeASpark;
+
