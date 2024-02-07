@@ -38,7 +38,6 @@ function SavedSparks({ allQuotes }) {
               onClick={() => selectCategory(category)}
             >
               {category && category.charAt(0).toUpperCase() + category.slice(1)}
-              {console.log(category)}
             </button>
           ))}
         </div>

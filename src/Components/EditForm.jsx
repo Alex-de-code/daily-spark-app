@@ -1,5 +1,3 @@
-// EditForm.js
-
 import React, { useState } from "react";
 
 const EditForm = ({ quote, updateCreatedQuotes }) => {
