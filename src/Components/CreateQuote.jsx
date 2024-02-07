@@ -88,7 +88,7 @@ function MakeASpark() {
     setCreatedQuotes((prevQuotes) =>
       prevQuotes.map((quote) => {
         if (quote.id === updatedQuote.id) {
-          return updatedQuote; // Replace the updated quote with the new one
+          return updatedQuote;
         }
         return quote;
       })
