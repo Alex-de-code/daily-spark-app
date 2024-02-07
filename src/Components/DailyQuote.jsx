@@ -8,11 +8,7 @@ const DailyQuote = ({ allQuotes, allBackgrounds }) => {
 
   useEffect(() => {
     if (allQuotes.length > 0 && dateNumber > 0) {
-      // setDailyQuote(allQuotes[7]);
       setDailyQuote(allQuotes[dateNumber]);
-      // const splittedDate = date.split(" ");
-      // splittedDate[1].replace(",", "");
-      // setDailyQuote(splittedDate[1]);
     }
 
     if (allBackgrounds.length > 0) {
