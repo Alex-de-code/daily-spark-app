@@ -4,6 +4,8 @@
 
 Welcome to Daily Spark, your ultimate source of daily motivation! Say goodbye to inconsistent quotes with our reliable platform. Empower your voice by creating and sharing motivational content. Experience personalized inspiration tailored to your needs. Join us and ignite your day with Daily Spark!
 
+[Link to Website](https://daily-spark.netlify.app/)
+
 ## Installation
 
 - Fork and clone this repository
